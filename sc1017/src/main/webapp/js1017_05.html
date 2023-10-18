@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+			section{width: 300px; height: 300px; border: 3px solid black; margin: 30px auto;}
+			#txt{text-align: center; width: 300px; height: 100px; font-size: 20px; font-weight: 700;}
+		</style>
+		<script>
+			$(function(){
+				$("#txt").text(10+5);
+				//제이쿼리 구분 선언
+				$("#btn").click(function(){
+					alert("테스트");
+				});
+			});
+			/* 자바스크립트 onclick="btn()" 이벤트 함수호출
+			function btn(){     
+				alert("테스트");
+			} */
+		</script>
+	</head>
+	<body>
+		<section>
+			<div id="txt"></div>
+		</section>
+		<button id="btn">확인</button>
+	</body>
+</html>
