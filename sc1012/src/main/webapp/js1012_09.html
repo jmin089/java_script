@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>continue</title>
+	</head>
+	<body>
+		<script>
+			var random = Math.floor(Math.random()*100)+1;
+			alert(random);
+			while(true){
+				var input = Number(prompt("숫자를 입력하세요."));
+				alert("입력한 숫자 : "+input);
+				//else if 입력숫자가 더 크면 낮은숫자를 입력, 더 작으면 높은숫자를 입력
+				if(input==random){
+					document.write("랜덤 숫자 : "+random);
+					break;
+				}else if(input>=random){
+					alert("입력한 숫자가 급니다. 낮은숫자를 입력하세요.");
+				}else(input<=random)
+					alert("입력한 숫자가 작습니다. 높은숫자를 입력하세요.")
+			}
+		</script>
+	</body>
+</html>
