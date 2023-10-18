@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>value, innerText</title>
+		<style>
+			#content{border: 1px solid black; width: 200px; height: 100px;}
+		</style>
+		<script>
+			function btn(){
+				var name = document.querySelector("#name").value;
+				if(name==""){
+					alert("이름을 입력해주세요.")
+					document.querySelector("#name").focus();
+					return false;
+				}
+				alert("이름 : "+name);
+				var kor = document.querySelector("#content").innerText;
+				//document.getElementById("content");
+				//document.getElementsByClassName("name");
+				//document.getElementsByTagName("label");
+				alert("국어점수 : "+kor)
+			}
+		</script>
+	</head>
+	<body>
+		<form action="#" method="get">
+			<label>이름</label>
+			<input type="text" name="name" id="name">
+			<br>
+			<button type="button" onclick="btn()">저장</button>
+		</form>
+		<div id="content">100</div>
+	</body>
+</html>

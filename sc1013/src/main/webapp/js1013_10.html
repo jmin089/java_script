@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Array배열</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+		<style>
+			#txt{width: 500px; height: 50px; border: 1px solid black; font-size: 20px; text-align: center;}
+		</style>
+	</head>
+		<script>
+			var stu_arr = [{"stuNo":1,"first_name":"Fonsie","email":"ffassmann0@hp.com","gender":"Male","ip_address":"90.143.130.119"},
+						{"stuNo":2,"first_name":"Kipp","email":"kgoomes1@google.com.br","gender":"Female","ip_address":"136.169.134.11"},
+						{"stuNo":3,"first_name":"Jaime","email":"jgargett2@domainmarket.com","gender":"Male","ip_address":"191.29.130.247"},
+						{"stuNo":4,"first_name":"Arlyne","email":"amctavish3@goodreads.com","gender":"Agender","ip_address":"245.49.151.99"},
+						{"stuNo":5,"first_name":"Erhard","email":"efaivre4@wordpress.com","gender":"Male","ip_address":"160.8.214.159"},
+						{"stuNo":6,"first_name":"Cherry","email":"gblowen5@statcounter.com","gender":"Female","ip_address":"174.64.29.113"},
+						{"stuNo":7,"first_name":"Barnabe","email":"bleifer6@yellowpages.com","gender":"Male","ip_address":"237.141.82.168"},
+						{"stuNo":8,"first_name":"Broderick","email":"bbeaufoy7@reddit.com","gender":"Male","ip_address":"145.154.147.184"},
+						{"stuNo":9,"first_name":"Merry","email":"mhierro8@dot.gov","gender":"Non-binary","ip_address":"188.63.151.97"},
+						{"stuNo":10,"first_name":"Arnaldo","email":"atarr9@ustream.tv","gender":"Male","ip_address":"113.94.140.107"}];
+			function arr_print(){
+				console.log(stu_arr[0]);
+				$("#txt").text(stu_arr[0].stuNo+", "+stu_arr[0].first_name+", "+stu_arr[0].email+", "+stu_arr[0].gender+", "+stu_arr[0].ip_address);
+			}
+			
+			function btn(){
+				//input박스의 이름을 가져옴.
+				var name =  $("#name").val();
+				var sch_student = stu_arr.filter((stu)=>{    //filter는 반복이 포함되어 있음 arr만큼 반복
+					return stu.first_name==name;       //first_name이랑 가져온 이름이 같은지
+				});
+				alert("검색되었습니다.")
+				console.log(sch_student);
+				$("#txt").text(sch_student);
+			}
+		</script>
+	<body>
+		<h1>명단</h1>
+		<input type="button" onclick="arr_print()" value="불러오기">
+		<br>
+		<input type="text" name="name" id="name">
+		<input type="button" onclick="btn()" value="검색">
+		<br>
+		<div id="txt">
+			<!--1번 학생정보가 들어옴.-->
+			
+		</div>
+	</body>
+</html>
