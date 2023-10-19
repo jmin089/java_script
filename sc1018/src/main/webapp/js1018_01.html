@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>선택자</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+			*{margin: 0; padding: 0;font-weight: ;}
+			ul{list-style: none; text-align: center;}
+			li{width: 130px; height: 50px; border: 3px solid black;}
+		</style>
+		<script>
+			$(function(){        //제이쿼리로 시작하면 위치가 상관이 없음. 자바function은 제이쿼리 안에 선언 불가.
+				$("li").click(function(){
+					alert($(this).text())   //this는 내가 선택한거 li를 말함. this는 여러개의 값이 들어있을때 많이 사용
+					$(this).css({"background":"yellow","border":"3px solid red"});
+					//$(this).css("border","3px solid red");   2개 이상일때 한묶음을 ,대신 : 사용하고 사이에 , 사용   전체를 {}로 묶어줌.
+				});
+			$("#btn").click(function(){
+				alert("테스트");
+				$("#list li").eq(2).css("background","green");
+			});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<ul  id="list">
+			<li>구글</li>
+			<li>네이버</li>
+			<li>다음</li>
+			<li>네이트</li>
+		</ul>
+		<button id="btn">변경</button>
+	</body>
+</html>

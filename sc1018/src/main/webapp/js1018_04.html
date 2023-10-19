@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>map</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+			*{margin: 0; padding: 0;}
+			div{width: 200px; height: 200px; border: 3px solid black;}
+		</style>
+	</head>
+	<body>
+		<script>
+			$(function(){  //jquery
+				var arr1 = [               //[]배열 {}객체
+					{"area":"서울","name":"홍길동"},
+					{"area":"부산","name":"유관순"},
+					{"area":"대구","name":"이순신"},
+					{"area":"광주","name":"강감찬"},
+					{"area":"서울","name":"김유신"},
+					{"area":"부산","name":"홍길자"},
+					{"area":"서울","name":"홍길순"}
+				];
+				var arr2 = $.map(arr1,function(data,idx){  //a-데이터(data)  b-인덱스(idx)
+					//console.log("data : "+data.area);
+					//console.log("idx : "+idx);
+					if(data.area=="서울"){
+						return data;
+					}
+				});
+				
+				console.log(arr2);
+				
+				var hdata = "";
+				$(arr2).each(function(idx,data){  //a-인덱스(idx)  b-데이터(data)
+					hdata = "지역:"+data.area+", 이름:"+data.name+"<br>";
+				});
+				
+				/* for문
+				for(var i=0;i<arr2.length;i++){
+					data = "지역:"+arr2[i].area+", 이름:"+arr2[i].name+"<br>";
+				}
+				$("#txt").html(data);  */
+				
+			});  //jquery
+		</script>
+		<div id="txt">
+			지역:서울, 이름:홍길동<br>
+			지역:서울, 이름:홍길동<br>
+			지역:서울, 이름:홍길동<br>
+			지역:서울, 이름:홍길동<br>
+		</div>
+		<button>데이터 가져오기</button>
+	</body>
+</html>
